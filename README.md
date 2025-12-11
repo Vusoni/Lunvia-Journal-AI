@@ -37,7 +37,7 @@ Built as part of my journey to create a productivity-focused app that combines <
 
 <h2>Preview</h2>
 <p>
-<img src="https://github.com/Vusoni/Lunvia-Movies-ReactNative/blob/9297d72bffc7124abef15d8715017f579434e4cb/screenshots.png" width="600" />
+<img src="https://github.com/Vusoni/Lunvia-Journal-AI/blob/64fe5a7ea607aab4b6597909e351f2af2b9ab02f/screenshot.png" width="600" />
 </p>
 
 <hr style="border:1px solid #eee; margin: 20px 0;" />
