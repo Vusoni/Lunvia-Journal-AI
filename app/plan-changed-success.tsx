@@ -50,8 +50,8 @@ export default function PlanChangedSuccess() {
         style={[
           styles.successCard,
           {
-            backgroundColor: isDark ? "#1a1a2e" : "#ffffff",
-            borderColor: isDark ? "#2a2a3e" : "#e5e7eb",
+            backgroundColor: "#ffffff",
+            borderColor: "#e5e5e5",
           },
         ]}
       >
@@ -64,26 +64,26 @@ export default function PlanChangedSuccess() {
         <Text
           style={[
             styles.title,
-            { color: isDark ? Colors.dark.text : Colors.light.text },
+            { color: "#000000" },
           ]}
         >
-          Subscription Updated!
+          Subscription Plan Updated!
         </Text>
 
         <Text
-          style={[styles.subtitle, { color: isDark ? "#a0a0a0" : "#666666" }]}
+          style={[styles.subtitle, { color: "#666666" }]}
         >
-          Your subscription has been successfully changed
+          Your subscription has been updated successfully.
         </Text>
 
         {/* Plan Status */}
         {!isLoaded ? (
           <View style={styles.loaderContainer}>
-            <ActivityIndicator size="large" color={Colors.light.tint} />
+            <ActivityIndicator size="large" color="#000000" />
           </View>
         ) : (
           <Protect
-            plan="pro"
+            plan="premium"
             fallback={
               <View style={styles.planBadge}>
                 <Text style={styles.planBadgeText}>Free Plan</Text>
@@ -91,15 +91,14 @@ export default function PlanChangedSuccess() {
             }
           >
             <View style={styles.planBadge}>
-              <Text style={styles.planBadgeText}>Pro Plan</Text>
+              <Text style={styles.planBadgeText}>Premium Plan</Text>
             </View>
           </Protect>
         )}
 
         {/* Return to the app text */}
         <Text style={styles.returnToAppText}>
-          You can now close this page & return to the app to continue using your
-          PRO Benefits!
+        You can now close this page and return to the app to continue enjoying your premium benefits. Your upgrade is active, and all enhanced features are ready for you to use.
         </Text>
 
         {/* Return Button */}
@@ -108,12 +107,12 @@ export default function PlanChangedSuccess() {
             styles.returnButton,
             {
               opacity: pressed ? 0.8 : 1,
-              backgroundColor: "#10B981",
+              backgroundColor: "#000000",
             },
           ]}
           onPress={handleReturn}
         >
-          <Text style={styles.returnButtonText}>Return to App</Text>
+          <Text style={styles.returnButtonText}>Back to the App</Text>
         </Pressable>
       </View>
     </View>
@@ -125,9 +124,7 @@ export default function PlanChangedSuccess() {
         style={[
           styles.container,
           {
-            backgroundColor: isDark
-              ? Colors.dark.background
-              : Colors.light.background,
+            backgroundColor: "#ffffff",
           },
         ]}
       >
@@ -141,9 +138,7 @@ export default function PlanChangedSuccess() {
       style={[
         styles.container,
         {
-          backgroundColor: isDark
-            ? Colors.dark.background
-            : Colors.light.background,
+          backgroundColor: "#ffffff",
         },
       ]}
     >
@@ -174,7 +169,7 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginBottom: 32,
     fontWeight: "400",
-    color: "#10B981",
+    color: "#000000",
   },
   successCard: {
     maxWidth: 440,
@@ -202,22 +197,22 @@ const styles = StyleSheet.create({
     width: 72,
     height: 72,
     borderRadius: 36,
-    backgroundColor: "#10B981",
+    backgroundColor: "#000000",
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 24,
     ...Platform.select({
       ios: {
-        shadowColor: "#10B981",
+        shadowColor: "#000000",
         shadowOffset: { width: 0, height: 4 },
-        shadowOpacity: 0.3,
+        shadowOpacity: 0.2,
         shadowRadius: 12,
       },
       android: {
         elevation: 6,
       },
       web: {
-        boxShadow: "0 4px 24px rgba(16, 185, 129, 0.3)",
+        boxShadow: "0 4px 24px rgba(0, 0, 0, 0.2)",
       },
     }),
   },
@@ -247,15 +242,15 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 20,
-    backgroundColor: "rgba(16, 185, 129, 0.1)",
+    backgroundColor: "#f5f5f0",
     marginBottom: 24,
     borderWidth: 1,
-    borderColor: "rgba(16, 185, 129, 0.2)",
+    borderColor: "#e5e5e0",
   },
   planBadgeText: {
     fontSize: 14,
     fontWeight: "600",
-    color: "#10B981",
+    color: "#000000",
   },
   proBadge: {
     flexDirection: "row",

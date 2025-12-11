@@ -1,7 +1,9 @@
 import Logo from "@/components/Logo";
+import SignInWithApple from "@/components/SignInWithApple";
+import SignInWithGoogle from "@/components/SignInWithGoogle";
 import { useModal } from "@/contexts/ModalContext";
 import { useSignUp } from "@clerk/clerk-expo";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import * as React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
@@ -136,7 +138,7 @@ export default function SignUpScreen() {
                     onChangeText={setCode}
                     borderColor="$borderColor"
                     focusStyle={{
-                      borderColor: "$purple10",
+                      borderColor: "black",
                     }}
                     keyboardType="numeric"
                     autoComplete="one-time-code"
@@ -147,10 +149,11 @@ export default function SignUpScreen() {
 
                 <Button
                   size="$4"
-                  bg="#904BFF"
+                  bg="black"
                   color="white"
-                  borderColor="#904BFF"
+                  borderColor="black"
                   onPress={onVerifyPress}
+                  style={{ borderRadius: 12 }}
                   disabled={!isLoaded || isLoading}
                   opacity={!isLoaded || isLoading ? 0.5 : 1}
                 >
@@ -167,10 +170,10 @@ export default function SignUpScreen() {
                 Didn&apos;t receive the code?
               </Paragraph>
               <Button
-                variant="outlined"
+                chromeless
                 size="$3"
-                borderColor="#904BFF"
-                color="#904BFF"
+                color="black"
+                textDecorationLine="underline"
                 onPress={() => setPendingVerification(false)}
               >
                 Resend
@@ -218,7 +221,7 @@ export default function SignUpScreen() {
                   onChangeText={setEmailAddress}
                   borderColor="$borderColor"
                   focusStyle={{
-                    borderColor: "$purple10",
+                    borderColor: "black",
                   }}
                 />
               </YStack>
@@ -232,7 +235,7 @@ export default function SignUpScreen() {
                   onChangeText={setPassword}
                   borderColor="$borderColor"
                   focusStyle={{
-                    borderColor: "$purple10",
+                    borderColor: "black",
                   }}
                 />
               </YStack>
@@ -241,15 +244,19 @@ export default function SignUpScreen() {
 
               <Button
                 size="$4"
-                bg="#904BFF"
+                bg="black"
                 color="white"
-                borderColor="#904BFF"
+                borderColor="black"
                 onPress={onSignUpPress}
+                style={{ borderRadius: 12 }}
                 disabled={!isLoaded || isLoading}
                 opacity={!isLoaded || isLoading ? 0.5 : 1}
               >
                 {isLoading ? "Creating Account..." : "Create Account"}
               </Button>
+
+              <SignInWithGoogle />
+              <SignInWithApple />
             </YStack>
           </Card>
 
@@ -260,16 +267,16 @@ export default function SignUpScreen() {
             <Paragraph color="$color" opacity={0.7}>
               Already have an account?
             </Paragraph>
-
-            <Button
-              variant="outlined"
-              size="$3"
-              borderColor="#904BFF"
-              color="#904BFF"
-              onPress={() => router.canGoBack() && router.back()}
-            >
-              Sign In
-            </Button>
+            <Link href="/sign-in" asChild>
+              <Button
+                chromeless
+                size="$3"
+                color="black"
+                textDecorationLine="underline"
+              >
+                Sign In
+              </Button>
+            </Link>
           </XStack>
         </YStack>
       </ScrollView>

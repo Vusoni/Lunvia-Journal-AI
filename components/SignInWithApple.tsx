@@ -23,7 +23,7 @@ export const useWarmUpBrowser = () => {
 // Handle any pending authentication sessions
 WebBrowser.maybeCompleteAuthSession();
 
-export default function SignInWithGoogle() {
+export default function SignInWithApple() {
   useWarmUpBrowser();
   const router = useRouter();
 
@@ -34,7 +34,7 @@ export default function SignInWithGoogle() {
     try {
       // Start the authentication process by calling `startSSOFlow()`
       const { createdSessionId, setActive } = await startSSOFlow({
-        strategy: "oauth_google",
+        strategy: "oauth_apple",
         // For web, defaults to current path
         // For native, you must pass a scheme, like AuthSession.makeRedirectUri({ scheme, path })
         // For more info, see https://docs.expo.dev/versions/latest/sdk/auth-session/#authsessionmakeredirecturioptions
@@ -79,11 +79,12 @@ export default function SignInWithGoogle() {
       style={{ borderRadius: 12 }}
     >
       <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-        <MaterialCommunityIcons name="google" size={20} color="#FFFFFF" />
+        <MaterialCommunityIcons name="apple" size={20} color="#FFFFFF" />
         <Text style={{ color: "#FFFFFF", fontSize: 16, fontWeight: "500" }}>
-          Sign in with Google
+          Sign in with Apple
         </Text>
       </View>
     </Button>
   );
 }
+

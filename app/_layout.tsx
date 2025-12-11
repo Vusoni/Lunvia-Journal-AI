@@ -25,6 +25,7 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
+      {/* Clerk provider in order to achieve authentication */}
       <ClerkProvider tokenCache={tokenCache}>
         <TamaguiProvider config={tamaguiConfig}>
           <PortalProvider shouldAddRootHost>

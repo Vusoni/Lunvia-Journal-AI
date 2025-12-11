@@ -109,7 +109,7 @@ export default function Profile() {
               >
                 <View style={styles.proPlanBadge}>
                   <Text fontSize={13} fontWeight="700" color="#904BFF">
-                    ✨ Pro Plan
+                    ✨ premiumPlan
                   </Text>
                 </View>
               </Protect>

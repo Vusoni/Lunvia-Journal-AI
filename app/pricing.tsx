@@ -28,7 +28,7 @@ export default function PricingWeb() {
           </View>
         </View>
 
-        <Text style={styles.title}>Elevate Your Journaling</Text>
+        <Text style={styles.title}>Change your life!</Text>
 
         <Text style={styles.subtitle}>
           Unlock AI-powered insights, advanced analytics, and premium features
@@ -43,7 +43,7 @@ export default function PricingWeb() {
           {Platform.OS === "web" ? (
             <View style={styles.pricingWrapper}>
               <PricingTable
-                newSubscriptionRedirectUrl="http://localhost:8081/plan-changed-success"
+                newSubscriptionRedirectUrl="http://localhost:8081/plan-changed-success" // This will take me to success page
                 appearance={{
                   variables: {
                     fontFamily:
@@ -71,44 +71,38 @@ export default function PricingWeb() {
 
       {/* Features Section */}
       <View style={styles.featuresSection}>
-        <Text style={styles.featuresTitle}>Everything You Get with Pro</Text>
+        <Text style={styles.featuresTitle}>What's inside premium?</Text>
         <Text style={styles.featuresSubtitle}>
-          Premium features designed to enhance your journaling
+          All the features created for those who like to enhance their journaling.
         </Text>
 
         <View style={styles.featuresGrid}>
           {[
             {
-              icon: "🤖",
               title: "AI Chat Assistant",
               description: "Get intelligent insights from your journal entries",
             },
             {
-              icon: "📊",
-              title: "Advanced Analytics",
+              title: "Advanced Insights",
               description: "Track patterns and trends in your journaling",
             },
             {
-              icon: "🔒",
               title: "Priority Support",
               description: "Get help when you need it most",
             },
             {
-              icon: "☁️",
-              title: "Unlimited Storage",
+              title: "Unlimited Entries Storage",
               description: "Never worry about space again",
             },
             {
-              icon: "🎨",
-              title: "Premium Themes",
+              title: "Premium Style Themes",
               description: "Customize your experience",
             },
             {
-              icon: "🚀",
               title: "Early Access",
               description: "Be first to try new features",
             },
-          ].map((feature, index) => (
+          ].map((feature, index) => ( // Map all over te feature 
             <View key={index} style={styles.featureCard}>
               <View style={styles.featureIconContainer}>
                 <Text style={styles.featureIcon}>{feature.icon}</Text>
@@ -137,11 +131,11 @@ export default function PricingWeb() {
 
   const manageContent = (
     <View style={styles.contentContainer}>
-      {/* Hero Section for Pro Users */}
+      {/* Hero Section for premiumUsers */}
       <View style={styles.heroSection}>
         <View style={styles.badgeContainer}>
           <View style={styles.proBadge}>
-            <Text style={styles.proBadgeText}>PRO MEMBER</Text>
+            <Text style={styles.proBadgeText}>premiumMEMBER</Text>
           </View>
         </View>
 
@@ -174,18 +168,18 @@ export default function PricingWeb() {
           </Text>
         </View>
       )}
-      {/* Pro Features Reminder */}
+      {/* premiumFeatures Reminder */}
       <View style={styles.proFeaturesSection}>
-        <Text style={styles.proFeaturesTitle}>Your Pro Benefits</Text>
+        <Text style={styles.proFeaturesTitle}>Your Upgraded Premium Plan Benefits</Text>
 
         <View style={styles.proBenefitsList}>
           {[
-            "🤖 AI Chat Assistant",
-            "📊 Advanced Analytics",
-            "🔒 Priority Support",
-            "☁️ Unlimited Storage",
-            "🎨 Premium Themes",
-            "🚀 Early Access to Features",
+            "AI Chat Assistant",
+            "Advanced Insights",
+            "Priority Support",
+            "Unlimited Journal Entries",
+            "Premium Themes",
+            "Early Access to New Features",
           ].map((benefit, index) => (
             <View key={index} style={styles.proBenefitItem}>
               <Text style={styles.proBenefitText}>{benefit}</Text>
@@ -198,9 +192,9 @@ export default function PricingWeb() {
       <View style={styles.supportBadge}>
         <Text style={styles.supportIcon}>💬</Text>
         <View style={styles.supportTextContainer}>
-          <Text style={styles.supportTitle}>Need Help?</Text>
+          <Text style={styles.supportTitle}>Need Support?</Text>
           <Text style={styles.supportText}>
-            Our priority support team is here for you. Contact us anytime.
+          Our dedicated support team is always ready to assist you. Reach out at any time for help.
           </Text>
         </View>
       </View>
@@ -215,7 +209,7 @@ export default function PricingWeb() {
   );
 
   const content = (
-    <Protect plan="pro" fallback={upgradeContent}>
+    <Protect plan="premium" fallback={upgradeContent}>
       {manageContent}
     </Protect>
   );
@@ -231,6 +225,8 @@ export default function PricingWeb() {
   return <ScrollView style={styles.container}>{content}</ScrollView>;
 }
 
+
+// Styles created with help of AI
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -256,28 +252,28 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 24,
     borderWidth: 1,
-    backgroundColor: "rgba(144, 75, 255, 0.1)",
-    borderColor: "rgba(144, 75, 255, 0.3)",
+    backgroundColor: "rgba(251, 251, 251, 0.1)",
+    borderColor: "rgba(0, 0, 0, 0.3)",
   },
   badgeText: {
     fontSize: 13,
     fontWeight: "700",
     letterSpacing: 1,
-    color: "#904BFF",
+    color: "#000000",
   },
   proBadge: {
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 24,
     borderWidth: 1,
-    backgroundColor: "rgba(144, 75, 255, 0.15)",
+    backgroundColor: "rgba(0, 0, 0, 0.15)",
     borderColor: "rgba(144, 75, 255, 0.4)",
   },
   proBadgeText: {
     fontSize: 13,
     fontWeight: "700",
     letterSpacing: 1,
-    color: "#904BFF",
+    color: "#000000",
   },
   title: {
     fontSize: 48,
@@ -383,18 +379,7 @@ const styles = StyleSheet.create({
       },
     }),
   },
-  featureIconContainer: {
-    width: 64,
-    height: 64,
-    borderRadius: 20,
-    backgroundColor: "rgba(144, 75, 255, 0.1)",
-    alignItems: "center",
-    justifyContent: "center",
-    marginBottom: 20,
-  },
-  featureIcon: {
-    fontSize: 32,
-  },
+ 
   featureTitle: {
     fontSize: 20,
     fontWeight: "700",
@@ -417,8 +402,8 @@ const styles = StyleSheet.create({
     marginBottom: 64,
     gap: 20,
     borderWidth: 1,
-    backgroundColor: "#f0f9ff",
-    borderColor: "#e0f2fe",
+    backgroundColor: "#ffffff",
+    borderColor: "#000000",
   },
   trustIcon: {
     fontSize: 36,
@@ -490,7 +475,7 @@ const styles = StyleSheet.create({
     marginBottom: 28,
     gap: 20,
     borderWidth: 1,
-    backgroundColor: "#fef3c7",
+    backgroundColor: "#ffffff",
     borderColor: "#fde68a",
   },
   supportIcon: {
@@ -503,7 +488,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "700",
     marginBottom: 6,
-    color: Colors.light.text,
+    color: "#ffffff",
   },
   supportText: {
     fontSize: 15,
@@ -516,7 +501,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logoutButton: {
-    backgroundColor: "#ef4444",
+    backgroundColor: "#000000",
     paddingHorizontal: 32,
     paddingVertical: 16,
     borderRadius: 16,

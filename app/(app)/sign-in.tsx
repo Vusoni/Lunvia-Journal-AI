@@ -1,5 +1,6 @@
 // Imports
 import Logo from "@/components/Logo";
+import SignInWithApple from "@/components/SignInWithApple";
 import SignInWithGoogle from "@/components/SignInWithGoogle";
 import { useModal } from "@/contexts/ModalContext";
 import { isClerkAPIResponseError, useSignIn } from "@clerk/clerk-expo";
@@ -148,6 +149,7 @@ export default function Page() {
               </Button>
 
               <SignInWithGoogle />
+              <SignInWithApple />
             </YStack>
           </Card>
 
@@ -160,10 +162,10 @@ export default function Page() {
             </Paragraph>
             <Link href="/sign-up" asChild>
               <Button
-                variant="outlined"
+                chromeless
                 size="$3"
-                borderColor="black"
                 color="black"
+                textDecorationLine="underline"
               >
                 Sign Up
               </Button>
