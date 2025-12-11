@@ -70,7 +70,7 @@ export default function HomeScreen() {
         }}
       >
         {/* Header with date */}
-        <YStack gap="$2" style={{ alignItems: "center" }} mt="$4">
+        <YStack gap="$2" style={{ alignItems: "center" }} mt="$3">
           <Logo />
           <Text
             fontSize="$2"
@@ -83,7 +83,7 @@ export default function HomeScreen() {
         </YStack>
 
         {/* Greeting */}
-        <YStack gap="$2" style={{ alignItems: "center" }} mb="$4">
+        <YStack gap="$2" style={{ alignItems: "center" }} mb="$5">
           <H1
             fontSize="$8"
             fontWeight="600"
@@ -140,7 +140,7 @@ export default function HomeScreen() {
               elevate
               size="$4"
               bordered
-              bg="$background"
+              bg="white"
               borderColor="$borderColor"
               padding="$5"
             >
@@ -153,14 +153,14 @@ export default function HomeScreen() {
                 {/* Current Streak */}
                 <YStack gap="$2" style={{ alignItems: "center" }} flex={1}>
                   <Text fontSize="$2" color="$color10" fontWeight="600">
-                    CURRENT STREAK
+                  ACTIVE STREAK
                   </Text>
                   <XStack gap="$2" style={{ alignItems: "baseline" }}>
                     <Text fontSize="$10" fontWeight="700" color="$color12">
                       {currentStreak}
                     </Text>
                     <Text fontSize="$5" color="$color11" fontWeight="500">
-                      {currentStreak === 1 ? "day" : "days"}
+                      {currentStreak === 1 ? "Day" : "Days"}
                     </Text>
                   </XStack>
                   <View style={{ marginTop: 4 }}>
@@ -187,20 +187,20 @@ export default function HomeScreen() {
                 {/* Best Streak */}
                 <YStack gap="$2" style={{ alignItems: "center" }} flex={1}>
                   <Text fontSize="$2" color="$color10" fontWeight="600">
-                    BEST STREAK
+                  LONGEST STREAK
                   </Text>
                   <XStack gap="$2" style={{ alignItems: "baseline" }}>
                     <Text fontSize="$10" fontWeight="700" color="$color11">
                       {longestStreak}
                     </Text>
                     <Text fontSize="$5" color="$color10" fontWeight="500">
-                      {longestStreak === 1 ? "day" : "days"}
+                      {longestStreak === 1 ? "Day" : "Days"} 
                     </Text>
                   </XStack>
                   <View style={{ marginTop: 4 }}>
                     <IconSymbol
                       size={28}
-                      name="trophy.fill"
+                      name="trophy.circle"
                       color={AppColors.trophyGold}
                     />
                   </View>
@@ -221,10 +221,8 @@ export default function HomeScreen() {
 
               {daysUntilNextMilestone > 0 && (
                 <XStack gap="$2" style={{ alignItems: "center" }}>
-                  <IconSymbol size={16} name="target" color="#6b7280" />
                   <Text fontSize="$3" color="$color10">
-                    {daysUntilNextMilestone} days until {nextMilestone}-day
-                    milestone!
+                    Just {daysUntilNextMilestone} days until you hit your {nextMilestone}-day milestone!
                   </Text>
                 </XStack>
               )}
@@ -244,24 +242,25 @@ export default function HomeScreen() {
           >
             <Card
               elevate
-              size="$4"
+              size="$3"
               bordered
-              bg="purple"
-              borderColor="purple"
-              padding="4"
+              bg="black"
+              borderColor="black"
+              padding="$3"
             >
               <XStack
                 gap="$3"
                 style={{ alignItems: "center", justifyContent: "center" }}
               >
+
+                <Text fontSize="$5" fontWeight="600" color="white">
+                  Create New Entry
+                </Text>
                 <IconSymbol
                   size={24}
                   name="plus.circle.fill"
                   color={AppColors.white}
                 />
-                <Text fontSize="$5" fontWeight="600" color="white">
-                  Add New Entry
-                </Text>
               </XStack>
             </Card>
           </Pressable>
@@ -273,24 +272,25 @@ export default function HomeScreen() {
           >
             <Card
               elevate
-              size="$4"
+              size="$3"
               bordered
               bg="white"
               borderColor="$borderColor"
-              padding="$4"
+              padding="$3"
             >
               <XStack
                 gap="$3"
                 style={{ alignItems: "center", justifyContent: "center" }}
               >
+                
+                <Text fontSize="$6" fontWeight="600" color="$color12">
+                Review Entries
+                </Text>
                 <IconSymbol
                   size={24}
                   name="book.fill"
                   color={AppColors.primary}
                 />
-                <Text fontSize="$5" fontWeight="600" color="$color12">
-                  View Entries
-                </Text>
               </XStack>
             </Card>
           </Pressable>

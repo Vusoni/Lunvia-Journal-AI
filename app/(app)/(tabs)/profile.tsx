@@ -19,6 +19,8 @@ import {
   YStack,
 } from "tamagui";
 
+
+// Account page
 export default function Profile() {
   const { user, isLoaded } = useUser();
   const insets = useSafeAreaInsets();
@@ -98,7 +100,7 @@ export default function Profile() {
 
               {/* Plan Badge */}
               <Protect
-                plan="pro"
+                plan="premium"
                 fallback={
                   <View style={styles.planBadge}>
                     <Text fontSize={13} fontWeight="600" color="$color11">
@@ -107,19 +109,19 @@ export default function Profile() {
                   </View>
                 }
               >
-                <View style={styles.proPlanBadge}>
-                  <Text fontSize={13} fontWeight="700" color="#904BFF">
-                    ✨ premiumPlan
+                <View style={styles.premiumPlanBadge}>
+                  <Text fontSize={13} fontWeight="700" color="black">
+                    Premium Plan
                   </Text>
                 </View>
               </Protect>
             </YStack>
           </Card>
 
-          {/* Stats Cards */}
+          {/* Stats Cards
           <XStack gap="$4">
             {/* Current Streak Card */}
-            <Card
+            {/* <Card
               elevate
               size="$4"
               bordered
@@ -133,20 +135,20 @@ export default function Profile() {
                   <IconSymbol
                     size={24}
                     name="flame.fill"
-                    color={AppColors.flameOrange}
+                    color={"black"}
                   />
                 </View>
-                <Text fontSize={36} fontWeight="800" color="$color12">
+                <Text fontSize={36} fontWeight="800" color="black">
                   {currentStreak}
                 </Text>
-                <Text fontSize={12} color="$color10" fontWeight="600">
-                  Day Streak
+                <Text fontSize={12} color="black" fontWeight="600">
+                  Current Day Streak
                 </Text>
               </YStack>
-            </Card>
+            </Card>  */}
 
             {/* Best Streak Card */}
-            <Card
+            {/* <Card
               elevate
               size="$4"
               bordered
@@ -160,18 +162,18 @@ export default function Profile() {
                   <IconSymbol
                     size={24}
                     name="trophy.fill"
-                    color={AppColors.primary}
+                    color={"black"}
                   />
                 </View>
-                <Text fontSize={36} fontWeight="800" color="$color12">
+                <Text fontSize={36} fontWeight="800" color="black">
                   {longestStreak}
                 </Text>
-                <Text fontSize={12} color="$color10" fontWeight="600">
-                  Best Streak
+                <Text fontSize={12} color="black" fontWeight="600">
+                  Longest Streak
                 </Text>
               </YStack>
             </Card>
-          </XStack>
+          </XStack> */}
 
           {/* Subscription Card */}
           <Card
@@ -185,15 +187,15 @@ export default function Profile() {
             <YStack gap="$4">
               <YStack gap="$2">
                 <H2 fontSize={18} fontWeight="700" color="$color12">
-                  Subscription
+                  Subscription Billing
                 </H2>
                 <Text fontSize={13} color="$color10" lineHeight={18}>
-                  Manage your plan and billing settings
+                Manage your account plan and payment options.
                 </Text>
               </YStack>
               <Button
                 size="$4"
-                bg="$purple9"
+                bg="black"
                 color="white"
                 pressStyle={{ opacity: 0.8 }}
                 fontWeight="600"
@@ -201,7 +203,7 @@ export default function Profile() {
                   Linking.openURL("http://localhost:8081/pricing");
                 }}
               >
-                View Plans & Pricing
+                Compare Plans & Pricing
               </Button>
             </YStack>
           </Card>
@@ -218,10 +220,10 @@ export default function Profile() {
             <YStack gap="$4">
               <YStack gap="$2">
                 <H2 fontSize={18} fontWeight="700" color="$color12">
-                  Account
+                  Account Profile
                 </H2>
                 <Text fontSize={13} color="$color10" lineHeight={18}>
-                  Manage your account settings
+                Control and adjust your account settings.
                 </Text>
               </YStack>
               <SignOutButton />
@@ -233,6 +235,8 @@ export default function Profile() {
   );
 }
 
+
+// Styling
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -251,22 +255,22 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: "#d1d5db",
-    backgroundColor: "#f9fafb",
+    borderColor: "#000000",
+    backgroundColor: "#ffffff",
   },
-  proPlanBadge: {
+  premiumPlanBadge: {
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: "rgba(144, 75, 255, 0.4)",
-    backgroundColor: "rgba(144, 75, 255, 0.15)",
+    borderColor: "rgba(0, 0, 0, 0.4)",
+    backgroundColor: "rgba(255, 255, 255, 0.15)",
   },
   streakIconContainer: {
     width: 48,
     height: 48,
     borderRadius: 24,
-    backgroundColor: "rgba(245, 158, 11, 0.15)",
+    backgroundColor: "rgba(255, 255, 255, 0.15)",
     alignItems: "center",
     justifyContent: "center",
   },

@@ -152,18 +152,18 @@ export const getStreakStatusMessage = ({
   lastEntryDate,
 }: StreakData): string => {
   if (currentStreak === 0) {
-    return "Start your journaling streak today! ✨";
+    return "Start your journaling streak today and begin building your habit!";
   }
 
   const hasEntryToday = lastEntryDate === toDateString(new Date());
 
   const messages = {
     1: hasEntryToday
-      ? "Great start! Keep it going tomorrow! 🔥"
-      : "1 day streak - write today to continue! 💪",
+      ? "Great start! You've completed your first entry, keep the momentum going tomorrow!"
+      : "1-day streak! Make sure to write today to continue your streak!",
     default: hasEntryToday
-      ? `Amazing! ${currentStreak} day streak! 🔥`
-      : `${currentStreak} day streak - write today to continue! 🔥`,
+      ? `Amazing! You're on a ${currentStreak}-day streak. Keep up the excellent work!`
+      : `${currentStreak}-day streak! Write today to maintain your progress and keep the streak alive.`,
   };
 
   return messages[currentStreak as keyof typeof messages] ?? messages.default;

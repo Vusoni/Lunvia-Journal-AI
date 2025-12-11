@@ -17,6 +17,9 @@ import Markdown from "react-native-markdown-display";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, Card, H2, Text, View, YStack } from "tamagui";
 
+
+
+// AI Chat
 export default function AIChatScreen() {
   const [input, setInput] = useState("");
   const scrollViewRef = useRef<ScrollView>(null);
@@ -58,7 +61,7 @@ export default function AIChatScreen() {
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <Protect
-        plan="pro"
+        plan="premium"
         fallback={
           <View style={styles.content}>
             <YStack
@@ -86,8 +89,7 @@ export default function AIChatScreen() {
                   style={{ textAlign: "center", lineHeight: 24 }}
                   px="$4"
                 >
-                  Get intelligent insights, personalized journaling tips, and
-                  thoughtful conversations about your entries
+                 Receive intelligent insights, personalized journaling guidance, and meaningful reflections on your entries.
                 </Text>
               </YStack>
 
@@ -95,59 +97,59 @@ export default function AIChatScreen() {
                 elevate
                 size="$4"
                 bordered
-                bg="$background"
+                bg="white"
                 borderColor="$borderColor"
-                padding="$5"
+                padding="$4"
                 width="90%"
                 maxWidth={400}
               >
                 <YStack gap="$4">
                   <YStack gap="$3">
                     <View style={styles.featureRow}>
-                      <MaterialIcons
-                        name="smart-toy"
-                        size={20}
-                        color="#904BFF"
-                      />
-                      <Text fontSize={15} color="$color11" flex={1}>
-                        Chat with AI about your journal entries
-                      </Text>
-                    </View>
-                    <View style={styles.featureRow}>
-                      <MaterialIcons
-                        name="insights"
-                        size={20}
-                        color="#904BFF"
-                      />
-                      <Text fontSize={15} color="$color11" flex={1}>
-                        Get personalized insights and suggestions
-                      </Text>
-                    </View>
-                    <View style={styles.featureRow}>
-                      <MaterialIcons
-                        name="psychology"
-                        size={20}
-                        color="#904BFF"
-                      />
-                      <Text fontSize={15} color="$color11" flex={1}>
-                        Discover patterns in your mood and habits
-                      </Text>
-                    </View>
-                    <View style={styles.featureRow}>
-                      <MaterialIcons
-                        name="lightbulb"
-                        size={20}
-                        color="#904BFF"
-                      />
-                      <Text fontSize={15} color="$color11" flex={1}>
-                        Receive journaling tips and prompts
-                      </Text>
-                    </View>
+  <MaterialIcons
+    name="question-answer"  // updated icon
+    size={20}
+    color="#000000"
+  />
+  <Text fontSize={15} color="$color11" flex={1}>
+    Engage in AI-powered conversations about your entries
+  </Text>
+</View>
+<View style={styles.featureRow}>
+  <MaterialIcons
+    name="insights"  // keeping insights icon
+    size={20}
+    color="#000000"
+  />
+  <Text fontSize={15} color="$color11" flex={1}>
+    Receive personalized insights and actionable suggestions
+  </Text>
+</View>
+<View style={styles.featureRow}>
+  <MaterialIcons
+    name="track-changes"  // updated icon for patterns
+    size={20}
+    color="#000000"
+  />
+  <Text fontSize={15} color="$color11" flex={1}>
+    Discover trends and patterns in your moods and habits
+  </Text>
+</View>
+<View style={styles.featureRow}>
+  <MaterialIcons
+    name="lightbulb-outline"  // updated icon for tips
+    size={20}
+    color="#000000"
+  />
+  <Text fontSize={15} color="$color11" flex={1}>
+    Access expert journaling tips and creative prompts
+  </Text>
+          </View>
                   </YStack>
 
                   <Button
                     size="$4"
-                    bg="$purple9"
+                    bg="black"
                     color="white"
                     fontWeight="600"
                     pressStyle={{ opacity: 0.8 }}
@@ -155,7 +157,7 @@ export default function AIChatScreen() {
                       Linking.openURL("http://localhost:8081/pricing");
                     }}
                   >
-                    Upgrade to Pro
+                    Upgrade to Premium Plan
                   </Button>
                 </YStack>
               </Card>
@@ -165,7 +167,7 @@ export default function AIChatScreen() {
                 color="$color9"
                 style={{ textAlign: "center" }}
               >
-                Unlock AI Chat and more premium features
+                Access AI Chat Assistant plus more advanced tools.
               </Text>
             </YStack>
           </View>
@@ -190,13 +192,13 @@ export default function AIChatScreen() {
                 <YStack gap="$4" style={{ alignItems: "center" }} mt="$12">
                   <View style={styles.avatarContainer}>
                     <View style={styles.avatar}>
-                      <MaterialIcons name="smart-toy" size={40} color="#666" />
+                      <MaterialIcons name="forum" size={40} color="#666" />
                     </View>
                   </View>
                   <Text
                     fontSize="$6"
                     fontWeight="600"
-                    color="$color11"
+                    color="black"
                     style={{ textAlign: "center" }}
                   >
                     Start a conversation
@@ -207,8 +209,7 @@ export default function AIChatScreen() {
                     style={{ textAlign: "center", lineHeight: 22 }}
                     px="$6"
                   >
-                    Ask me about journaling tips, mood tracking, or just chat
-                    about your day
+                    Receive guidance on journaling, keep track of your mood, or talk about how your day went.
                   </Text>
                 </YStack>
               ) : (
@@ -248,7 +249,7 @@ export default function AIChatScreen() {
                                 style={{
                                   body: {
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                     fontSize: 16,
                                     lineHeight: 22,
                                   },
@@ -256,33 +257,33 @@ export default function AIChatScreen() {
                                     marginTop: 0,
                                     marginBottom: 0,
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                   },
                                   strong: {
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                     fontWeight: "bold",
                                   },
                                   em: {
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                     fontStyle: "italic",
                                   },
                                   link: {
                                     color:
-                                      m.role === "user" ? "#cfe2ff" : "#904BFF",
+                                      m.role === "user" ? "#cfe2ff" : "black",
                                   },
                                   bullet_list: {
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                   },
                                   ordered_list: {
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                   },
                                   list_item: {
                                     color:
-                                      m.role === "user" ? "white" : "#1f2937",
+                                      m.role === "user" ? "white" : "black",
                                   },
                                 }}
                               >
@@ -335,7 +336,7 @@ export default function AIChatScreen() {
               <View style={styles.inputWrapper}>
                 <TextInput
                   style={styles.input}
-                  placeholder="Type a message..."
+                  placeholder="Type your message..."
                   placeholderTextColor="#999"
                   value={input}
                   onChange={(e) => setInput(e.nativeEvent.text)}
@@ -363,7 +364,7 @@ export default function AIChatScreen() {
                 />
                 <Button
                   size="$3"
-                  bg={input.trim() ? "#904BFF" : "#cccccc"}
+                  bg={input.trim() ? "#000000" : "#cccccc"}
                   color="white"
                   onPress={handleSend}
                   disabled={!input.trim()}
@@ -371,7 +372,11 @@ export default function AIChatScreen() {
                   style={styles.sendButton}
                   pressStyle={{ scale: 0.95 }}
                 >
-                  ↑
+                  <MaterialIcons
+                          name="send"
+                          size={14}
+                          color="white"
+                                />
                 </Button>
               </View>
             </View>
@@ -382,10 +387,11 @@ export default function AIChatScreen() {
   );
 }
 
+//  Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ffffff",
+    backgroundColor: "#FAFAFA", // updated
   },
   keyboardAvoid: {
     flex: 1,
@@ -397,7 +403,7 @@ const styles = StyleSheet.create({
     width: 120,
     height: 120,
     borderRadius: 60,
-    backgroundColor: "#f3f4f6",
+    backgroundColor: "#E5E7EB", // updated
     alignItems: "center",
     justifyContent: "center",
   },
@@ -422,7 +428,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#F3F4F6", // updated
     alignItems: "center",
     justifyContent: "center",
   },
@@ -435,7 +441,7 @@ const styles = StyleSheet.create({
     width: 32,
     height: 32,
     borderRadius: 16,
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#F3F4F6", // updated
     alignItems: "center",
     justifyContent: "center",
     marginTop: 4,
@@ -453,11 +459,11 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   userBubble: {
-    backgroundColor: "#904BFF",
+    backgroundColor: "#111827", // updated (dark gray/blackish)
     borderBottomRightRadius: 4,
   },
   assistantBubble: {
-    backgroundColor: "#f0f0f0",
+    backgroundColor: "#E5E7EB", // updated (light gray)
     borderBottomLeftRadius: 4,
   },
   toolInvocation: {
@@ -465,26 +471,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 6,
     paddingHorizontal: 10,
-    backgroundColor: "#f8f9fa",
+    backgroundColor: "#F3F4F6", // updated
     borderRadius: 12,
     marginVertical: 4,
     marginBottom: 16,
     borderLeftWidth: 2,
-    borderLeftColor: "#666",
+    borderLeftColor: "#9CA3AF", // updated
   },
   inputContainer: {
     paddingHorizontal: 16,
     paddingVertical: 12,
     paddingBottom: Platform.OS === "ios" ? 12 : 16,
     borderTopWidth: 1,
-    borderTopColor: "#f0f0f0",
-    backgroundColor: "#ffffff",
+    borderTopColor: "#E5E7EB", // updated
+    backgroundColor: "#FAFAFA", // updated
   },
   inputWrapper: {
     flexDirection: "row",
     alignItems: "flex-end",
     gap: 8,
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#F3F4F6", // updated
     borderRadius: 24,
     paddingHorizontal: 16,
     paddingVertical: 8,
@@ -492,7 +498,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 16,
-    color: "#000",
+    color: "#111827", // updated
     maxHeight: 100,
     paddingVertical: 8,
     lineHeight: 22,

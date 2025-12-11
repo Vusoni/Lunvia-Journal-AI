@@ -24,7 +24,7 @@ export const SignOutButton = () => {
     );
   };
   return (
-    <Button theme="red" borderColor="$borderColor" onPress={handleSignOut}>
+    <Button theme="white" borderColor="$borderColor" onPress={handleSignOut}>
       <Text>Sign out</Text>
     </Button>
   );
